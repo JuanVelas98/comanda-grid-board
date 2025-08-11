@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,7 +19,17 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
+				// Sistema de colores personalizado
+				'azul-profundo': '#1E4A8F',
+				'azul-medio': '#3B6CB3', 
+				'azul-claro': '#5DA5E8',
+				'blanco-principal': '#FFFFFF',
+				'gris-oscuro': '#333333',
+				
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -52,16 +63,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +85,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float-card': {
+					'0%, 100%': { 
+						transform: 'translateY(0px) scale(1)',
+						boxShadow: '0 4px 20px rgba(30, 74, 143, 0.1)'
+					},
+					'50%': { 
+						transform: 'translateY(-5px) scale(1.02)',
+						boxShadow: '0 8px 30px rgba(30, 74, 143, 0.2)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float-card': 'float-card 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-azul': 'linear-gradient(135deg, #1E4A8F 0%, #3B6CB3 50%, #5DA5E8 100%)',
+				'gradient-azul-hover': 'linear-gradient(135deg, #1a3f7a 0%, #2f5a9a 50%, #4a8bc4 100%)',
 			}
 		}
 	},
